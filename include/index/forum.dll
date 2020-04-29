@@ -1,0 +1,24 @@
+<title>Forum - <?php echo "$namesite"; ?></title>
+<?php include("includes/ct.dll"); ?><span class="titulo">Topicos:</span>
+<div id="create" style="position: relative; left: 700px; top: -17px; width: 100px;">
+<a href="index.php?forum1" class="linkw">Criar Topico</a>
+</div>
+<?php include("includes/ft.dll"); ?>
+<?php include("includes/cb.dll"); ?>
+<div align="left">
+<?php
+$servidor = "localhost";
+ $usuario = "root";
+ $senha = "369875";
+ $banco = "perses"; 
+$conexao = mysql_connect($servidor,$usuario,$senha); 
+mysql_select_db($banco); 
+$res = mysql_query("SELECT * FROM `topicos` ORDER BY id DESC;");
+echo "<table><tr><td></td></tr>";
+ while($escrever=mysql_fetch_array($res)){
+ echo "<tr><td><form action=vertopico.php method=post><input type=hidden name=uid value=" . $escrever['id'] . "><input type=submit name=envia value=" . $escrever['nome'] . "></form></td></tr>";
+}
+echo "</table>";
+?>
+</div>
+<?php include("includes/fb.dll"); ?></div>

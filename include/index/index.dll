@@ -1,0 +1,15 @@
+<title>Home - <?php echo "$namesite"; ?></title>
+<?php
+$titulopag = "Home";
+?>
+<span class="titulo">Lasted News:</span><br>
+<span class="texto">
+<?php include "newsdb.php"; ?>
+</span>
+<hr size="1" color="#cccccc">
+<span class="titulo">Ultimos Assuntos:</span><br>
+<span class="texto">
+<?php include "postdb.php"; ?>
+</span>
+<hr size="1" color="#cccccc">
+<div align="center"><span class="subtitulo">You Share 2011-2012 | Perses 2012</span></div>
